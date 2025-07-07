@@ -17,7 +17,7 @@ Smoothing and Normalization: A Savitzky-Golay filter is applied to reduce high-f
 
 After pre-processing, the two workflows diverge.
 
-Approach 1: Peak-Sensitive Elastic-Net Logistic Regression
+# Approach 1: Peak-Sensitive Elastic-Net Logistic Regression
 This approach uses a single, powerful machine learning model to perform classification and feature selection simultaneously.
 
 How it Works: Elastic Net is a penalized regression method. It builds a logistic regression model but applies a penalty that shrinks the coefficients (i.e., the importance) of the thousands of wavenumbers. Its key feature is that it can shrink the coefficients of unimportant features to exactly zero, effectively removing them from the model. This makes the model "peak-sensitive" because it automatically identifies the most informative spectral peaks and ignores the noisy baseline.
@@ -26,7 +26,7 @@ Strengths: The primary advantage of this method is interpretability. The output 
 
 When to Use It: This method is best when the primary goal is feature selection and interpretation. If the main question is "Which specific chemical bonds or functional groups differ between these two locations?", Elastic Net provides a direct answer. However, it can sometimes struggle with very small sample sizes, as the penalty might be too aggressive and shrink all coefficients to zero.
 
-Approach 2: PCA + LDA (Principal Component Analysis + Linear Discriminant Analysis)
+# Approach 2: PCA + LDA (Principal Component Analysis + Linear Discriminant Analysis)
 This is a classic, two-step chemometric approach that prioritizes predictive accuracy by first reducing the complexity of the data.
 
 How it Works:
